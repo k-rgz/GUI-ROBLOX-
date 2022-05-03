@@ -1,13 +1,17 @@
--- by wrd#2000
--- contact for any errors
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
 
 local TextLabel = Instance.new("TextLabel")
+
+--Properties:
 
 TextLabel.Parent = game.StarterGui.ScreenGui
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.624060154, 0, 0.0378657542, 0)
+TextLabel.Position = UDim2.new(0.37132436, 0, 0.476754636, 0)
 TextLabel.Size = UDim2.new(0.257142872, 0, 0.0464715995, 0)
 TextLabel.Font = Enum.Font.SourceSansBold
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -15,7 +19,9 @@ TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
 
-local function GYRHVW_fake_script()
+-- Scripts:
+
+local function NYNA_fake_script() -- TextLabel.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -34,7 +40,7 @@ local function GYRHVW_fake_script()
 	
 	local lastMousePos
 	local lastGoalPos
-	local DRAG_SPEED = (8); 
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
 	function Update(dt)
 		if not (startPos) then return end;
 		if not (dragging) and (lastGoalPos) then
@@ -72,12 +78,13 @@ local function GYRHVW_fake_script()
 	
 	runService.Heartbeat:Connect(Update)
 end
-coroutine.wrap(GYRHVW_fake_script)()
-local function TQGA_fake_script()
+coroutine.wrap(NYNA_fake_script)()
+local function LHRRTE_fake_script() -- TextLabel.Script 
 	local script = Instance.new('Script', TextLabel)
 
 	local http = game:GetService("HttpService")
 	local longitude = http:JSONDecode(http:GetAsync('http://ip-api.com/json/')).lon
+	print("Hello world")
 	local region = script.Parent
 	
 	region.Text = "N\A"
@@ -94,4 +101,4 @@ local function TQGA_fake_script()
 		region.Text = "Australia"
 	end
 end
-coroutine.wrap(TQGA_fake_script)()
+coroutine.wrap(LHRRTE_fake_script)()
